@@ -1,0 +1,248 @@
+% langue
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{natbib}
+\usepackage{babel}
+
+% mise en page
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2.5cm,footskip=1em,includefoot]{geometry}
+
+% package classiques
+\usepackage{amsmath,amsfonts,mathrsfs,amssymb,amsthm}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{parskip}% http://ctan.org/pkg/parskip
+\usepackage{graphicx}
+%\usepackage{array}
+
+% police d'écriture
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{avant}
+
+%%Couleurs et URL
+\usepackage{xcolor}
+\definecolor{deepblue}{rgb}{0.3,0.3,0.8}
+\definecolor{darkblue}{rgb}{0,0,0.3}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{iremred}{RGB}{204,35,50}%% ROUGE IREM
+\definecolor{deepgreen}{rgb}{0,0.6,0}
+\definecolor{backcolor}{rgb}{0.98,0.95,0.95}
+\definecolor{gris}{rgb}{0.91,0.91,0.91}
+\definecolor{grisClair}{rgb}{0.95,0.95,0.95}
+\definecolor{bleuamu}{RGB}{20,118,198}
+\definecolor{cyanamu}{RGB}{77,198,244}
+\definecolor{noiramu}{RGB}{35,31,32}
+\definecolor{orangeamu}{RGB}{250,178,11} %original
+
+% liens / url
+\usepackage[colorlinks=true, allcolors=deepred]{hyperref}
+
+% style de notes
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+% Images & flottantes
+\usepackage{graphicx}
+\usepackage{wrapfig} 	%images encadrées
+\intextsep=0cm			%image à la même hauteur que le texte
+
+% figure sans numérotation
+\usepackage{ccaption}
+
+% numérotation des sections
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\labelenumi}{{\textbf{\arabic{enumi}})}}
+\renewcommand{\labelenumii}{{\textbf{\alph{enumii}}.}} %--
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+% numérotation des sections et table des matières
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{2}
+
+% personnaliser les titres/soustitres
+\usepackage{sectsty}
+\sectionfont{
+	\sectionrule{1ex}{0pt}{0ex}{0pt} %un peu plus d'espace
+	\centering\Huge\color{noiramu}} %couleur et centré
+\subsectionfont{%
+	\sectionrule{0.5ex}{0pt}{0ex}{0pt} %un peu plus d'espace
+	\sf\bfseries\LARGE\color{orangeamu}\scshape}
+\subsubsectionfont{\large\color{bleuamu}}
+
+% pour utiliser les dingbat il faut dédéfinir \checkmark
+\let\checkmark\undefined
+\usepackage{dingbat}
+
+% écrire du code python ou autre
+\usepackage{minted}
+
+%pour ajouter au besoin les espaces après les commandes persos
+\usepackage{xspace}
+
+%smiley
+\usepackage{wasysym}
+
+% chemin des images et ressources
+\graphicspath{{./res/}}
+
+% Configuration des environnements de textes
+\usepackage{xeboiboites}
+    %
+    % boite perso : exemple
+        \newbreakabletheorem[
+        small box style={fill=deepblue!90,draw=deepblue!15, rounded corners,line width=1pt},%
+        big box style={fill=deepblue!5,draw=deepblue!15,thick,rounded corners,line width=1pt},%
+        headfont={\color{white}\bfseries}
+        ]{exemple}{Exemple}{}%{counterCo}
+    %
+    % boite perso : remarque
+        \newbreakabletheorem[
+        small box style={draw=orangeamu!100,line width=2pt,fill=orangeamu!0,rounded corners,decoration=penciline, decorate},%
+        big box style={color=orangeamu!90,fill=orangeamu!10,thick,decoration={penciline},decorate},
+        broken edges={draw=orangeamu!90,thick,fill=orange!20!black!5, decoration={random steps, segment length=.5cm,amplitude=1.3mm},decorate},%
+        other edges={decoration=penciline,decorate,thick},%
+        headfont={\color{orangeamu}\large\sc\bfseries}
+        ]{remarque}{Remarque}{}%{counterCa}
+    %
+    % boite perso : formule (sans titre)
+        \newboxedequation[%
+        big box style={fill=cyanamu!10,draw=cyanamu!100,thick,decoration=penciline,decorate}]%
+        {form}
+    %
+    % boite perso : méthode
+        \newbreakabletheorem[
+        small box style={fill=bleuamu!100, draw=bleuamu!60, line width=1pt,rounded corners,decorate},%
+        big box style={fill=bleuamu!10,draw=bleuamu!30,thick,rounded corners,decorate},
+        headfont={\color{white}\large\sc\bfseries}
+        ]{methode}{Méthode}{}
+    %
+    % boite perso : astuce
+        \newspanning[
+        image=fig-idee,headfont=\bfseries,
+        spanning style={very thick,decoration=penciline,decorate}
+        ]{astuce}{Astuce}{}
+    %
+    % boite perso : activité
+        \newbreakabletheorem[
+        small box style={draw=orangeamu!100,line width=2pt,fill=orangeamu!100,rounded corners,decoration=penciline, decorate},%
+        big box style={color=orangeamu!100,fill=orangeamu!5,thick,decoration={penciline},decorate},
+        broken edges={draw=orangeamu!100,thick,fill=orangeamu!100, decoration={random steps, segment length=.5cm,amplitude=1.3mm},decorate},%
+        other edges={decoration=penciline,decorate,thick},%
+        headfont={\color{white}\large\scshape\bfseries}
+        ]{activite}{\includegraphics[height=1cm]{res/investigation.png}Activité}{}%{counterCa}
+    %   
+    % boite perso : environnement élève
+            \newenvironment{eleve}%
+            %{\begin{activite}\large\\} % écrire plus gros
+            {\begin{activite}\color{noiramu}\\}
+            	{\end{activite}}
+    %
+    % boite perso : formule        
+        \newenvironment{formule}%
+        %{\begin{activite}\large\\} % écrire plus gros
+        {\begin{form}\color{bleuamu}}
+        	{\end{form}}
+    %
+    % boite perso : scratchblocks
+        \newbreakabletheorem[
+        small box style={draw=orangeamu!100,line width=2pt,fill=orangeamu!0,rounded corners,decoration=penciline, decorate},%
+        big box style={color=orangeamu!90,fill=orangeamu!10,thick,decoration={penciline},decorate},
+        broken edges={draw=orangeamu!90,thick,fill=orange!20!black!5, decoration={random steps, segment length=.5cm,amplitude=1.3mm},decorate},%
+        other edges={decoration=penciline,decorate,thick},%
+        headfont={\color{orangeamu}\large\sc\bfseries}
+        ]{scratchblocks}{Scratchblocks}{}%{counterCa}
+    %
+    % boite perso : scratch3
+        \newbreakabletheorem[
+        small box style={fill=bleuamu!100, draw=bleuamu!60, line width=1pt,rounded corners,decorate},%
+        big box style={fill=bleuamu!10,draw=bleuamu!30,thick,rounded corners,decorate},
+        headfont={\color{white}\large\sc\bfseries}
+        ]{scratch3}{Scratch 3}{}
+
+\usepackage{colortbl}
+
+% en-tête et pied de pages
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    
+    % affichage des section*/subsection* 
+    %\renewcommand{\chaptermark}[1]{\markright{\MakeUppercase{#1}}}
+    \newcommand{\headerfmt}[1]{\textsl{\textsc{\Large{#1}}}}
+    \newcommand{\headerfmtpage}[1]{\textsc{\Large{#1}}}
+    
+    % pour PLAIN
+    \fancypagestyle{plain}{
+    	\setlength{\headheight}{33pt}
+    	\fancyhead{}
+    	\fancyfoot[L]{}%\href{http://url.univ-irem.fr/mars}{\includegraphics[height=1cm]{res/fig-logo-irem.png}}
+    	\fancyfoot[C]{\thepage}
+    	\fancyfoot[R]{\href{http://url.univ-irem.fr/ineflp}{\includegraphics[height=1cm]{res/fig-c2it.png}}}}
+    
+    % pour SCRATCH
+    \fancypagestyle{scratch}{
+    	\setlength{\headheight}{33pt}
+    	\fancyhead{}
+    	\fancyhead[L]{\texttt{\headerfmtpage{\small\thepage}}}
+    	\fancyhead[L]{\texttt{\headerfmt{\small\rightmark}}}
+    	\fancyhead[L]{\includegraphics[height=1cm]{res/fig-c2i-scratch}}
+    	\fancyhead[R]{}%\includegraphics[height=1cm]{res/mini-st.png}}
+    	\fancyfoot[L]{}%\includegraphics[height=1cm]{res/fig-logo-irem.png}}
+    	\fancyfoot[C]{Commission inter-IREM}
+    	\fancyfoot[R]{\includegraphics[height=1cm]{fig-c2it}}}
+    
+    % page par défaut : plain
+    \pagestyle{plain}
+
+% modification de \emph (qui permet de mettre en évidence du texte)
+\let\emph\relax % there's no \RedeclareTextFontCommand
+\DeclareTextFontCommand{\emph}{\em\normalfont\color{bleuamu}}
+
+% document non justifié mais aligné à gauche
+\usepackage[document]{ragged2e}
+
+%   images dans les titres
+\newcommand{\addstufftotoc}[2][toc]{% \addimagetotoc[<toc>]{<stuff>}
+	\addtocontents{#1}{#2}}
+\newcommand{\icon}[1]{\addstufftotoc{\nobreak\smallskip\protect\includegraphics[height=2\baselineskip]{#1}\par}}
+\usepackage{ifthen}
+\newcommand{\logo}[1]{%
+	\ifthenelse{\equal{#1}{mb}}
+	{\icon{res/mini-mb.png}}
+	{}%
+	\ifthenelse{\equal{#1}{mbpy}}
+	{\icon{res/microbit-python.png}}
+	{}% 
+	\ifthenelse{\equal{#1}{mq}}
+	{\icon{res/mini-maqueen.png}}
+	{}% 
+	\ifthenelse{\equal{#1}{mbot}}
+	{\icon{res/mini-mbot.png}}
+	{}%
+	\ifthenelse{\equal{#1}{st}}
+	{\icon{res/mini-st.png}}
+	{}%
+}
+
+%%
+%% commandes / raccourcis perso
+
+% pour microbit
+\newcommand{\mb}{\texttt{Micro:bit}\xspace}
+\newcommand{\matosMb}{~\includegraphics[height=1.5cm]{res/mini-mb.png}~\mb}
+
+% scratch3 vs scratch2
+
+\newcommand{\vsScratch}[4]{%
+\begin{minipage}[t]{0.5\linewidth}
+	\begin{scratchblocks}
+		\inputminted[firstline=#1, lastline=#2, baselinestretch=#3 ]
+		{text}{./res/scratchblocks.txt}
+	\end{scratchblocks}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\linewidth}
+	\begin{scratch3}~\\
+		#4
+	\end{scratch3}
+\end{minipage}
+}

@@ -1,0 +1,267 @@
+Blocs Mouvement
+avancer de () pas
+tourner droite de () degrés
+aller à [ v]
+aller à x: () y: ()
+glisser en () secondes à x: () y: ()
+glisser en () secondes à [ v]
+s'orienter en direction de ()
+s'orienter vers [ v]
+ajouter () à x
+mettre x à ()
+ajouter () à y
+mettre y à ()
+rebondir si le bord est atteint
+fixer le sens de rotation [ v]
+
+(abscisse x)
+
+(ordonnée y)
+
+(direction)
+
+Blocs Apparence
+basculer sur le costume [costume2 v]
+basculer sur l'arrière-plan [backdrop1 v]
+basculer sur l'arrière-plan [backdrop1 v]
+			et attendre
+costume suivant
+arrière-plan suivant
+dire [Hello!] pendant (2) secondes
+dire [Hello!]
+penser à [Hmm...] pendant (2) secondes
+penser à [Hmm...]
+ajouter (25) à l'effet [color v]
+mettre l'effet [color v] à (0)
+annuler les effets graphiques
+ajouter (10) à la taille
+mettre la taille à (100) 
+montrer
+cacher
+aller à l' [front v] plan
+déplacer de (1) plans vers l' [forward v]
+
+Blocs Son
+jouer le son [pop v]
+jouer le son [pop v] jusqu'au bout
+arrêter tous les sons
+ajouter () à l'effet [ v] :: sound 
+mettre l'effet [ v] à () :: sound
+annuler tous les effets sonores
+ajouter (-10) au volume
+mettre le volume à (100) %
+
+(volume)
+
+Blocs Évènements
+quand le drapeau vert pressé
+
+quand la touche [ v] est pressée
+
+quand ce sprite est cliqué
+
+quand l'arrière-plan bascule sur [ v]
+
+quand le [ v] > ()
+
+quand je reçois [ v]
+envoyer à tous [ v]
+envoyer à tous [ v] et attendre
+
+Blocs Contôle
+quand je commence comme un clone
+attendre (1) secondes
+attendre jusqu'à ce que <>
+créer un clone de [myself v]
+répéter (10) fois 
+fin
+répéter indéfiniment 
+fin
+si <> alors
+fin
+si <> alors
+sinon 
+fin
+répéter jusqu'à ce que <>
+fin
+stop [all v]
+supprimer ce clone
+
+Blocs Capteurs
+demander [What's your name?] et attendre
+réinitialiser le chronomètre
+<touche le [ v] ?>
+<couleur [#F3A533] touchée ?>
+<couleur [#FFFFFF] touche [#F3A533] ?>
+<touche [space v] pressée ?>
+<souris pressée ?>
+(distance de [ v])
+(réponse)
+(souris x)
+(souris y)
+(volume sonore)
+(chronomètre)
+([x position v] de [Sprite1 v])
+([minute v] actuelle)
+(jours depuis 2000)
+(nom d'utilisateur)
+
+
+Blocs Opérateurs
+<[] < []>
+<[] = []>
+<[] > []>
+<<> et <>>
+<<> ou <>>
+<non <>>
+<[] contient [] ?>
+(() + ())
+(() - ())
+(() * ())
+(() / ())
+(nombre aléatoire entre (1) et (10))
+(regrouper [hello] et [world])
+(lettre (1) de [world])
+(longueur de [world])
+(() modulo ())
+(arrondi de ())
+([sqrt v] de (9) :: operators)
+
+Blocs Variables
+mettre [variable v] à (0)
+ajouter (1) à [variable v] :: variables
+montrer la variable [variable v]
+cacher la variable [variable v]
+
+(variable)
+
+ajouter [thing] à [list v]
+supprimer l'élément (1 v) de [list v]
+supprimer tous les éléments de
+			la liste [list v]
+insérer [thing] en position (1 v)
+			de [list v]
+remplacer l'élément (1 v) de la liste
+		[list v] par [thing]
+montrer la liste [list v]
+cacher la liste [list v]
+
+(list :: list)
+(élément (1 v) de [list v])
+(élément # de () dans [list v])
+(longueur de [list v])
+<[list v] contient [thing] ?>
+
+Mes Blocs
+définir custom block
+custom block :: custom
+
+Extension Musique
+jouer du tambour [ v] pendant () temps
+faire une pause pendant () temps
+jouer la note () pendant () temps
+choisir l'instrument n° [ v]
+mettre le tempo à ()
+ajouter () au tempo
+
+(tempo)
+
+Extension Stylo
+estampiller
+effacer tout
+stylo en position d'écriture
+relever le stylo
+mettre la couleur du stylo à [#F3A533]
+mettre la [color v] du stylo à (50)
+ajouter (10) à la [color v] du stylo
+mettre la taille du stylo à (1)
+ajouter (1) à la taille du stylo
+
+Extension Détection Vidéo
+quand mouvement vidéo > ()
+
+(vidéo [ v] sur [ v])
+
+vidéo [ v]
+mettre la transparence vidéo sur ()
+
+Extension Synthèse vocale
+speak [] :: tts
+set voice to [ v] :: tts
+set language to [ v] :: tts
+
+Extension Traduire
+(translate () to [ v] :: translate)
+(language :: translate)
+
+Extension Makey Makey
+quand la touche [ v] est pressée
+when [ v] pressed in order :: makeymakey
+
+Extension Micro:bit
+when [ v] button pressed :: microbit hat
+
+<[ v] button pressed ? :: microbit>
+
+when [moved v] :: microbit
+display [ v] :: microbit
+display text [] :: microbit
+clear display :: microbit
+
+quand incliné [ v] :: microbit
+
+<tilted [ v] ? :: microbit>
+
+(angle d'inclinaison [ v] :: microbit)
+
+when pin [ v] connected :: microbit hat
+
+Extension LEGO Mindstorms
+motor [ v] turn this way for () seconds
+			:: ev3
+motor [ v] turn that way for () seconds
+			:: ev3
+motor [ v] set power () % :: ev3
+
+(motor [ v] position :: ev3)
+
+when button [ v] pressed :: ev3
+
+when distance \< () :: ev3 hat
+
+when brightness \< ()  :: ev3 hat
+
+<button [ v] pressed? :: ev3>
+
+(distance :: ev3)
+
+(brightness :: ev3)
+
+beep note () for () secs :: ev3
+
+Extension LEGO Wedo
+allumer le [moteur v] pour (1) secs
+			:: wedo
+allumer le [motor v] :: wedo
+arrêter le [motor v] :: wedo
+fixer [motor v] à la puissance (100)
+			:: wedo
+
+quand la distance [< v] (50)
+			:: wedo hat
+mettre la direction du moteur
+	[motor v] à [par ici v] :: wedo
+mettre la couleur de la lampe à (50)
+			:: wedo
+jouer la note (60 v) pendant (0.5)
+		secondes :: wedo
+
+quand incliné [n'importe quel v]
+			:: wedo hat
+
+(distance :: wedo)
+
+<tilted [n'importe quel v] ? :: wedo>
+
+(angle d'inclinaison [vers le haut v] 
+			:: wedo)
